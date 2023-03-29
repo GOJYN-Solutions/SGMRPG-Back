@@ -3,6 +3,7 @@ const routes = express.Router()
 
 const UserController = require('./controllers/UserController')
 const FichaController = require('./controllers/FichaController')
+const LoginController = require('./controllers/LoginController')
 
 //User
 routes.get('/users', UserController.getAll)
@@ -23,5 +24,8 @@ routes.post('/users/:userId/fichas', FichaController.register)
 routes.post('/users/:userId/update/:fichaId', FichaController.update)
 
 routes.delete('/users/:userId/ficha/:fichaId', FichaController.remove) 
+
+//Login
+routes.post('/login', LoginController.login)
 
 module.exports = routes
